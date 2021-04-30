@@ -1,7 +1,7 @@
-d49c0e853e1af97cb2a538c3c9a44e8f *DESCRIPTION
+8cf47073894b18ee866d1b9eaa295fb2 *DESCRIPTION
 7c508be3eb5a8297c76230cf0ecb1c56 *LICENSE
 386ae4a8bd007d3fa49125e253d5cd5f *NAMESPACE
-e817bdc6636a64d0d1942a711cbdadb3 *NEWS.md
+e3d311698b141db027e3f06aafbefc43 *NEWS.md
 157d2b5e906af7d59e8ec15a0f66b344 *R/ATS.R
 866be8cd69fba939d2cd509368a1d3e6 *R/ATSmini.R
 3974c9b1ac743eee40c9c29e38f660f4 *R/Brumbaugh.R
@@ -16,7 +16,7 @@ d795242d569a7f0641cd52827a3e2791 *R/binaryClust.R
 55c5d9ff0dd976f4f7a19876af221019 *R/binaryDiss.R
 ed05162956dd12d83f34f9e7f3cd474d *R/binaryMDS.R
 7e570bd9a20459fe1ff46f99879cc2f0 *R/binarySim.R
-e38231bad7c2197a3b524261ad853a31 *R/cboxplot.R
+d88b3d4851a06a2e2b8d9311073ff738 *R/cboxplot.R
 05b37f7f27fc3c7f66b70a413794d0d9 *R/cen1way.R
 1b32cbcfbdf1d5954dddbeef1306b233 *R/cen2means.R
 79dc685bda6a9bb04762122dc96fa64c *R/cenCompareCdfs.R
@@ -31,7 +31,7 @@ ad13c8e2646efa32c206383ea338da87 *R/cen_paired.R
 2c98fd95d09f37b2f397c69bc6ff0de0 *R/cenanova.R
 e4096649689bcfd2db27a0a1529c6305 *R/cencorreg.R
 575880b60a799ebccfcdeb082cf26e27 *R/cenperm2.R
-487b6acd25d29d465951d1c41685d71d *R/cenpermanova.R
+fd7636acce2df0e1e17f50220f105df3 *R/cenpermanova.R
 d6991425811e54e9b5b783d16e3b0825 *R/cenregQQ.R
 62901bd86bb4d0b19c98af52e037fbbe *R/censeaken.R
 37fc10d21a0e190396e7f5a1087f859c *R/centrend.R
@@ -47,7 +47,7 @@ fc067cabc994d273f8c52987213de0dd *R/uscore.R
 525a564fdf5dca8406c4ec1a77d3bcfc *R/uscores.R
 5f2d3e555954a79b7be46abf0f8e2a24 *R/uscoresi.R
 6c0e2959b718fa1f8ba035d6adc6d007 *README.md
-2ede0d2139c1c133e4081966c3a11316 *build/partial.rdb
+8abdf0175352f8dcbf7c377629fbafcd *build/partial.rdb
 2aad90483b791bdb0e4d3a1d8cab182f *data/Brumbaugh.rda
 a52d496a2389e88d4c7eef555c038e90 *data/PbHeron.rda
 6a566d3fa2b7dffa34d4e29f5c5151f3 *data/atrazine.rda
@@ -66,7 +66,7 @@ a622ee1614634b9d782ae547f793c5f1 *man/bestaic.Rd
 4f5de0d742caba5d2c11ee54b1e589fb *man/binaryDiss.Rd
 89e65291927182a096fa07d8aa60f910 *man/binaryMDS.Rd
 6027e7f301577ab6b2c746c06f0fed1f *man/binarySim.Rd
-df41fb148e45edb2d09ae3471134a57d *man/cboxplot.Rd
+72fdc0aa5df0cec80bba9a8d0b50dced *man/cboxplot.Rd
 b32e71a799c374a40c2e40deb9d470e1 *man/cen1way.Rd
 21708a80b8f1f5450819f1325afe7a0b *man/cen2means.Rd
 447e78df2af416c2a158da00b3764fb2 *man/cenCompareCdfs.Rd
