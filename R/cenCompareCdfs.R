@@ -1,8 +1,8 @@
 #' Comparison of empirical cdf of censored data
 #'
 #' @description Plots the empirical cdf and cdfs of three theoretical distributions, fit by maximum likelihood estimation (MLE).
-#' @param y.var The column of y (response variable) values plus detection limits
-#' @param cen.var The column of indicators, where 1 (or `TRUE`) indicates a detection limit in the `y.var` column, and 0 (or `FALSE`) indicates a detected value in `y.var`.
+#' @param x.var The column of y (response variable) values plus detection limits
+#' @param cens.var The column of indicators, where 1 (or `TRUE`) indicates a detection limit in the `y.var` column, and 0 (or `FALSE`) indicates a detected value in `y.var`.
 #' @param dist3 Name of the third distribution to be plotted, default is `norm` (normal distribution). Alternate third distribution is `weibull`(for Weibull distribution).  Log-normal and gamma distributions are always used.
 #' @param Yname Optional – input text in quotes to be used as the variable name.  The default is the name of the `y.var` input variable.
 #' @export
@@ -29,20 +29,23 @@
 #' cenCompareCdfs(Brumbaugh$Hg,Brumbaugh$HgCen,Yname="TCE Conc (ug/L)\nLong Island, NY USA")
 
 
-cenCompareCdfs <- function(y.var, cen.var, dist3="norm", Yname = yname)  {
+cenCompareCdfs <- function(x.var, cens.var, dist3="norm", Yname = yname)  {
   #added to stop if dist3 is not from the list
   if(!(dist3%in%c("norm","lnorm","gamma","weibull"))){stop(paste0(dist3," distribution is not supported with this function, try again."))}
 
   dist.vals <- c("norm","lnorm","gamma","weibull")
   dist.vals.text <- c("Normal","Lognormal","Gamma","Weibull")
 
-  yname <- deparse(substitute(y.var))
+  ydat <- na.omit(data.frame(x.var, cens.var))
+  y.var <- ydat[,1];  cen.var <- ydat[,2]
+
+  yname <- deparse(substitute(x.var))
   if (sum(as.integer(cen.var)) > 0)    # not all data are detects
 
   {left <- y.var*(1-as.integer(cen.var))
   right <- y.var
   var.frame <- data.frame(left, right)
-
+  # print(var.frame)
   y.dist1 <- fitdistcens(var.frame, "lnorm")
   y.dist2 <- fitdistcens(var.frame, "gamma")
   y.dist3 <- fitdistcens(var.frame, dist3)

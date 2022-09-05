@@ -5,8 +5,8 @@
 \title{Upper Tolerance interval for censored data}
 \usage{
 cenTolInt(
-  y.var,
-  cen.var,
+  x.var,
+  cens.var,
   conf = 0.95,
   cover = 0.9,
   method.fit = "mle",
@@ -14,9 +14,9 @@ cenTolInt(
 )
 }
 \arguments{
-\item{y.var}{The column of y (response variable) values plus detection limits}
+\item{x.var}{The column of x (response variable) values plus detection limits}
 
-\item{cen.var}{The column of indicators, where 1 (or \code{TRUE}) indicates a detection limit in the \code{y.var} column, and 0 (or \code{FALSE}) indicates a detected value in \code{y.var}.}
+\item{cens.var}{The column of indicators, where 1 (or \code{TRUE}) indicates a detection limit in the \code{y.var} column, and 0 (or \code{FALSE}) indicates a detected value in \code{y.var}.}
 
 \item{conf}{Confidence coefficient of the interval, 0.95 (default).}
 

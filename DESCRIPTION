@@ -1,8 +1,8 @@
 Package: NADA2
 Type: Package
 Title: Data Analysis for Censored Environmental Data
-Version: 1.0.2
-Date: 2022-04-18
+Version: 1.1.0
+Date: 2022-09-05
 Authors@R: c(person("Paul", "Julian",role=c("aut","cre"),
             email="pauljulianphd@gmail.com"),
             person("Dennis", "Helsel",role=c("aut","cph"),
@@ -20,14 +20,15 @@ Depends: R (>= 3.6), EnvStats (>= 2.4)
 Imports: grDevices, graphics, stats, utils, fitdistrplus, Kendall,
         multcomp, NADA, perm, survminer, mgcv, cenGAM, vegan, coin,
         survival
-Suggests: knitr, rmarkdown
+Suggests: knitr, rmarkdown, bestglm, car, nlme, rms
 Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
 RoxygenNote: 7.1.1
+VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2022-04-18 20:11:32 UTC; Paul Julian
+Packaged: 2022-09-05 20:00:35 UTC; Paul Julian
 Author: Paul Julian [aut, cre],
   Dennis Helsel [aut, cph]
 Repository: CRAN
-Date/Publication: 2022-04-19 14:32:33 UTC
+Date/Publication: 2022-09-05 20:30:02 UTC

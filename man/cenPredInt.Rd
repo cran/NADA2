@@ -5,8 +5,8 @@
 \title{Prediction interval for censored data}
 \usage{
 cenPredInt(
-  y.var,
-  cen.var,
+  x.var,
+  cens.var,
   pi.type = "two-sided",
   conf = 0.95,
   newobs = 1,
@@ -15,9 +15,9 @@ cenPredInt(
 )
 }
 \arguments{
-\item{y.var}{The column of y (response variable) detected values plus detection limits}
+\item{x.var}{The column of x (response variable) detected values plus detection limits}
 
-\item{cen.var}{The column of indicators, where 1 (or \code{TRUE}) indicates a detection limit in the \code{y.var} column, and 0 (or \code{FALSE}) indicates a detected value in \code{y.var}.}
+\item{cens.var}{The column of indicators, where 1 (or \code{TRUE}) indicates a detection limit in the \code{y.var} column, and 0 (or \code{FALSE}) indicates a detected value in \code{y.var}.}
 
 \item{pi.type}{Designation of either a \verb{“two-sided”} interval (default) or a 1-sided \verb{“upper”} or 1-sided \verb{“lower”} interval.}
 

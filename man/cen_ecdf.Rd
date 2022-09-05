@@ -4,14 +4,20 @@
 \alias{cen_ecdf}
 \title{Censored Empirical Cumulative Distribution Function}
 \usage{
-cen_ecdf(y.var, cen.var, group = NULL, xlim = c(0, max(y.var)), Ylab = varname)
+cen_ecdf(
+  x.var,
+  cens.var,
+  xgroup = NULL,
+  xlim = c(0, max(y.var)),
+  Ylab = varname
+)
 }
 \arguments{
-\item{y.var}{The column of data values plus detection limits}
+\item{x.var}{The column of data values plus detection limits}
 
-\item{cen.var}{The column of indicators, where 1 (or \code{TRUE}) indicates a detection limit in the \code{y.var} column, and 0 (or \code{FALSE}) indicates a detected value in \code{y.var}.}
+\item{cens.var}{The column of indicators, where 1 (or \code{TRUE}) indicates a detection limit in the \code{y.var} column, and 0 (or \code{FALSE}) indicates a detected value in \code{y.var}.}
 
-\item{group}{Optional - grouping or factor variable. Can be either a text or numeric value indicating the group assignment.}
+\item{xgroup}{Optional - grouping or factor variable. Can be either a text or numeric value indicating the group assignment.}
 
 \item{xlim}{Limits for the x (data) axis of the ecdf plot.  Default is 0 to the maximum of the y.var variable.  To change, use option xlim = c(0, 50) if 50 is to be the maximum on the plot.}
 
