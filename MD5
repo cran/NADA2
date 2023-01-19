@@ -1,7 +1,7 @@
-497f5a5da242ec063eab667f5f679ffd *DESCRIPTION
+c241ccdc811afec7af1a131415f167aa *DESCRIPTION
 7c508be3eb5a8297c76230cf0ecb1c56 *LICENSE
 aa871a28852cd09db751814ff4acc398 *NAMESPACE
-781a1df4cced8cc90704d89e7f9ef735 *NEWS.md
+4d13e7a7e2dc5636a3cebd57dbdd387b *NEWS.md
 157d2b5e906af7d59e8ec15a0f66b344 *R/ATS.R
 866be8cd69fba939d2cd509368a1d3e6 *R/ATSmini.R
 3974c9b1ac743eee40c9c29e38f660f4 *R/Brumbaugh.R
@@ -33,11 +33,11 @@ bf5f42ede9639b19f59e070ead4c0879 *R/cen2means.R
 f52d6948742b6ddc5397800d416f464f *R/cenQQ.R
 10642015c83b3d7c46d7555ce33683f4 *R/cenTolInt.R
 b5ccb6247f7c3dee7661a1dd708bda39 *R/cen_ecdf.R
-e2cb0706d3ef26b9fa44f0f92df3dded *R/cen_paired.R
+2536bfa360b9b3d22df94ff75873fcba *R/cen_paired.R
 0728cb397c4ed95f1dfb2e7908ac483b *R/cen_signedranktest.R
 4dc2bc858016a59409640e83b1fd4fb5 *R/cen_signtest.R
 340e79a37b89bfd6377e224a31b0cbc4 *R/cenanova.R
-e4096649689bcfd2db27a0a1529c6305 *R/cencorreg.R
+c4fc83b503d59f883c676c98dccc2d4c *R/cencorreg.R
 575880b60a799ebccfcdeb082cf26e27 *R/cenperm2.R
 fd7636acce2df0e1e17f50220f105df3 *R/cenpermanova.R
 d6991425811e54e9b5b783d16e3b0825 *R/cenregQQ.R
@@ -56,7 +56,7 @@ fc067cabc994d273f8c52987213de0dd *R/uscore.R
 525a564fdf5dca8406c4ec1a77d3bcfc *R/uscores.R
 5f2d3e555954a79b7be46abf0f8e2a24 *R/uscoresi.R
 88b9f5bef668fb660d3c1aecd351a0c2 *README.md
-a6233600984caac7b2bab1ac061d1e5c *build/partial.rdb
+e973bc3c2cd8e2c1433bb4cff1c7aca5 *build/partial.rdb
 470708cd8e7c66fd657df9958c5b4dcb *build/vignette.rds
 2aad90483b791bdb0e4d3a1d8cab182f *data/Brumbaugh.rda
 fa879131da12220eaaca85de6d391db0 *data/Example1.rda
@@ -70,8 +70,8 @@ eec5e6770dd1c9beadd1846836f9cc8f *data/Pollen_Thia.rda
 95f2fa2d1f068b830fee0137fb809a16 *data/TCE2.rda
 6a566d3fa2b7dffa34d4e29f5c5151f3 *data/atrazine.rda
 2f6c3e06c68075439a1148b148364264 *inst/doc/DataAnalysis.R
-de3c36cf407c32dcc2617cd3c9321b37 *inst/doc/DataAnalysis.Rmd
-acc37e490ef5472f72196c8ea0868e41 *inst/doc/DataAnalysis.html
+6656458b5557dc8fe61007563cf9d666 *inst/doc/DataAnalysis.Rmd
+9f8eb56cb3589012b1ccfe7212c6562f *inst/doc/DataAnalysis.html
 d446ba83632d3e5f007ca49c6237b06f *man/ATS.Rd
 798c953d804abda723e5ee6f63964032 *man/ATSmini.Rd
 5762805ef67f470c4725440c8edc04fc *man/Brumbaugh.Rd
@@ -107,7 +107,7 @@ e301b15ef6e559a46ed037229260641b *man/cenTolInt.Rd
 74c39a2c654a667baf4f99a6b5221110 *man/cen_signedranktest.Rd
 939408a04619d463b5a8907886cc8293 *man/cen_signtest.Rd
 35caa516d375d9a05eb17aeb626bdf91 *man/cenanova.Rd
-2328a9e8ed7afc38289ad2aa017feab1 *man/cencorreg.Rd
+14dd78736cac17f90dc8ca38daacea5a *man/cencorreg.Rd
 8dc9aac0f09eb8ba77db6798b38f1926 *man/cenperm2.Rd
 5499dd094d76090652bc815368c362dd *man/cenpermanova.Rd
 e26730a251fb95eee9babb8d99d6b991 *man/cenregQQ.Rd
@@ -128,4 +128,4 @@ b8f081ff2400a706c18f6c76c2b4e13c *man/ordranks.Rd
 1a38d68b57852a38694818414e2c04b3 *man/uscore.Rd
 554472011243afd4799f709ade51f86b *man/uscores.Rd
 26546a30b8de57c3a30e2ee2e3353b5a *man/uscoresi.Rd
-de3c36cf407c32dcc2617cd3c9321b37 *vignettes/DataAnalysis.Rmd
+6656458b5557dc8fe61007563cf9d666 *vignettes/DataAnalysis.Rmd
