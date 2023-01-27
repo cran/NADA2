@@ -1,7 +1,7 @@
-c241ccdc811afec7af1a131415f167aa *DESCRIPTION
+6bf01ee8288ad6df312697f1949240f4 *DESCRIPTION
 7c508be3eb5a8297c76230cf0ecb1c56 *LICENSE
 aa871a28852cd09db751814ff4acc398 *NAMESPACE
-4d13e7a7e2dc5636a3cebd57dbdd387b *NEWS.md
+c56d11bfcb823b03b8ad448dc13f9539 *NEWS.md
 157d2b5e906af7d59e8ec15a0f66b344 *R/ATS.R
 866be8cd69fba939d2cd509368a1d3e6 *R/ATSmini.R
 3974c9b1ac743eee40c9c29e38f660f4 *R/Brumbaugh.R
@@ -37,7 +37,7 @@ b5ccb6247f7c3dee7661a1dd708bda39 *R/cen_ecdf.R
 0728cb397c4ed95f1dfb2e7908ac483b *R/cen_signedranktest.R
 4dc2bc858016a59409640e83b1fd4fb5 *R/cen_signtest.R
 340e79a37b89bfd6377e224a31b0cbc4 *R/cenanova.R
-c4fc83b503d59f883c676c98dccc2d4c *R/cencorreg.R
+fec48d3bf010883dfec0472dce3dcb2a *R/cencorreg.R
 575880b60a799ebccfcdeb082cf26e27 *R/cenperm2.R
 fd7636acce2df0e1e17f50220f105df3 *R/cenpermanova.R
 d6991425811e54e9b5b783d16e3b0825 *R/cenregQQ.R
@@ -56,7 +56,7 @@ fc067cabc994d273f8c52987213de0dd *R/uscore.R
 525a564fdf5dca8406c4ec1a77d3bcfc *R/uscores.R
 5f2d3e555954a79b7be46abf0f8e2a24 *R/uscoresi.R
 88b9f5bef668fb660d3c1aecd351a0c2 *README.md
-e973bc3c2cd8e2c1433bb4cff1c7aca5 *build/partial.rdb
+79c1f1429e2d01018c2fe8830dcc7336 *build/partial.rdb
 470708cd8e7c66fd657df9958c5b4dcb *build/vignette.rds
 2aad90483b791bdb0e4d3a1d8cab182f *data/Brumbaugh.rda
 fa879131da12220eaaca85de6d391db0 *data/Example1.rda
@@ -71,7 +71,7 @@ eec5e6770dd1c9beadd1846836f9cc8f *data/Pollen_Thia.rda
 6a566d3fa2b7dffa34d4e29f5c5151f3 *data/atrazine.rda
 2f6c3e06c68075439a1148b148364264 *inst/doc/DataAnalysis.R
 6656458b5557dc8fe61007563cf9d666 *inst/doc/DataAnalysis.Rmd
-9f8eb56cb3589012b1ccfe7212c6562f *inst/doc/DataAnalysis.html
+d8be0aa06bb06942027c325d1ea6dcc4 *inst/doc/DataAnalysis.html
 d446ba83632d3e5f007ca49c6237b06f *man/ATS.Rd
 798c953d804abda723e5ee6f63964032 *man/ATSmini.Rd
 5762805ef67f470c4725440c8edc04fc *man/Brumbaugh.Rd
