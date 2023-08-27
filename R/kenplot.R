@@ -10,6 +10,13 @@
 #' @param xnam Custom label for the x axis of plots.  Default is x variable column name.
 #' @param ynam Custom label for the y axis of plots.  Default is y variable column name.
 #' @param Title Custom title for plots.  Default is "Akritas - Theil - Sen line".
+#' @param ylim argument consistent with `base` plotting to adjust y-axis limits; see `par` for more details
+#' @param xlim argument consistent with `base` plotting to adjust x-axis limits; see `par` for more details
+#' @param pch argument consistent with `base` plotting to adjust point type, see `par` for more details
+#' @param cex argument consistent with `base` plotting to adjust point size; see `par` for more details
+#' @param xaxs argument consistent with `base` plotting to adjust x-axis type; see `par` for more details
+#' @param yaxs argument consistent with `base` plotting to adjust y-axis type; see `par` for more details
+#' @param ... argument to adjust other base plotting functions; see `par` for more details
 #' @importFrom NADA cenken
 #' @export
 #' @return
@@ -31,7 +38,8 @@
 #' with(Brumbaugh, kenplot(Hg, HgCen, PctWetland,rep(0, times=length(PctWetland))))
 #' }
 
-kenplot <- function(y1, ycen, x1, xcen, atsline = FALSE, xnam=NULL, ynam=NULL, Title="Akritas - Theil - Sen line")  {
+kenplot <- function(y1, ycen, x1, xcen, atsline = FALSE, xnam=NULL, ynam=NULL, Title="Akritas - Theil - Sen line",
+                    ylim=NULL,xlim=NULL,pch=NULL,cex=NULL,xaxs="r", yaxs="r",...)  {
   alldat <- data.frame(y1, ycen, x1, xcen)
 
   if (!is.null(xnam)) {xnam = xnam}else(xnam=deparse(substitute(x1)))
@@ -65,7 +73,12 @@ kenplot <- function(y1, ycen, x1, xcen, atsline = FALSE, xnam=NULL, ynam=NULL, T
 #  oldpar <- par(no.readonly = TRUE)
 #  on.exit(par(oldpar))
 
-  plot(detected$x1, detected$y1, ylim = c(ymin, ymax), xlim = c(xmin, xmax), ylab = ynam, xlab = xnam, pch=19, cex=0.7, main=Title, xaxs="r", yaxs="r")
+  if(is.null(ylim)){ylim.val = c(ymin, ymax)}else{ylim.val=ylim}
+  if(is.null(xlim)){xlim.val = c(xmin, xmax)}else{xlim.val=xlim}
+  if(is.null(pch)){pch.val=19}else{pch.val=pch}
+  if(is.null(cex)){cex.val=0.7}else{cex.val=cex}
+
+  plot(detected$x1, detected$y1, ylim =ylim.val, xlim = xlim.val, ylab = ynam, xlab = xnam, pch=pch.val, cex=cex.val, main=Title,...)
   if (atsline == TRUE) {
     abline(int, slp, col = "purple")}
 

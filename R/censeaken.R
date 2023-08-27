@@ -9,8 +9,14 @@
 #' @param nmin The minimum number of observations needed for the entire time period to be tested, per season.  For example, with 1 sample per year per season over an 8-year period, you have 8 observations for each season.  You can increase this number if you want a higher minimum.  Don’t decrease it below the default of 4.  If there are fewer than nmin values that season is skipped and not included in the overall test and a note of this will be printed in the console.
 #' @param seaplots In addition to the plot of the overall Seasonal Kendall trend line, plots of the trend in individual seasons can also be drawn.
 #' @param printstat Logical `TRUE`/`FALSE` option of whether to print the resulting statistics in the console window, or not.  Default is `TRUE.`
+#' @param ... other inputs associated with modifying plots produced by this function.
 #'
 #' @return Prints the Kendall trend test results for each season individually. The overall Seasonal Kendall test and Theil-Sen line results are both printed and returned.
+#' @details  For each season the ATS function is used to compute the season's Kendall-S statistic and p-value for the trend test.  The test is the usual ATS procedure, not a permutation test.  For the overall test there are R (default 4999) random rearrangements of data that are generated with no mixing of data from one season to another season within a permutation -- data over time within a season are randomized.  This retains any between-seasons differences while removing any trend from year to year to use as the permuted "representation of the null hypothesis" of no trend in the R Seasonal Kendall tests. For a 2-sided trend test the p-value is the number of the absolute value of the permutation S statistics that are equal to or greater than the absolute value of the observed S from the original data, plus 1 (for the observed S of the original data), divided by the total (R+1) S values.
+#'
+#' The censeaken function differs from other R packages that do not incorporate censored data in their trend tests (EnvStats, Kendall, rkt and others) in that censeaken uses all of the data across the years without an option to equalize each year's or season's influence by using the overall mean or median of the period's data rather than the original observations. Seasons with more data will have more influence on the outcome, just as years with more data will have more influence. If the numbers of observations differ enough between seasons or years that this is of concern, it is up to the user to perhaps eliminate some data in data-rich periods that are most unlike the conditions or times of data collected in sparse periods.  Or to compute summary statistics such as the median of each season/year combination and run the test on the medians, though this will result in a loss of power to detect trends and will require the user to use methods such as those in NADA2 to compute medians when there are censored data.
+
+
 #'
 #' If `seaplots=TRUE` each season's trend line will be plotted seperately. A plot of the overall Seasonal Kendall (Akritas-Theil-Sen) line is always plotted.
 #' If `seaplots=FALSE` only the overall Seasonal Kendall (Akritas-Theil-Sen) line will be plotted on a data scatterplot.
@@ -35,7 +41,7 @@
 #' }
 
 
-censeaken <- function(time, y, y.cen, group, LOG = FALSE, R = 4999, nmin = 4, seaplots = FALSE,printstat=TRUE)
+censeaken <- function(time, y, y.cen, group, LOG = FALSE, R = 4999, nmin = 4, seaplots = FALSE,printstat=TRUE,...)
 {
   xname = deparse(substitute(time))
   yname = deparse(substitute(y))
@@ -113,7 +119,7 @@ censeaken <- function(time, y, y.cen, group, LOG = FALSE, R = 4999, nmin = 4, se
     int <- as.numeric(as.character(int[1]))
     y.seas <- x.seas*slp+int
     z <- data.frame(x.seas, y.seas)
-    kenplot(yc[[i]], cc[[i]], xc[[i]], xcen = rep(0, times=ntest), xnam=xname, ynam=yname, atsline = TRUE)
+    kenplot(yc[[i]], cc[[i]], xc[[i]], xcen = rep(0, times=ntest), xnam=xname, ynam=yname, atsline = TRUE,...)
     lines(z, col = "purple")
     mtext(paste("Season =", sea))
   }
@@ -148,7 +154,7 @@ censeaken <- function(time, y, y.cen, group, LOG = FALSE, R = 4999, nmin = 4, se
   if(printstat==TRUE){print(RESULTS)}
   if(printstat==TRUE){cat(dsh)}
 
-  kenplot(yyy, ccc, xxx, xcen = rep(0, times=nall), xnam=xname, ynam=yname, Title = "Seasonal Kendall Test")
+  kenplot(yyy, ccc, xxx, xcen = rep(0, times=nall), xnam=xname, ynam=yname, Title = "Seasonal Kendall Test",...)
   abline(intall, medslope, lwd=2, col = "blue")
   mtext ("Overall Trend Line", col = "blue")
 

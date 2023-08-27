@@ -9,18 +9,18 @@ knitr::opts_chunk$set(
 ## ----eval=FALSE---------------------------------------------------------------
 #  setwd(".../NADA2")
 
-## ----warning=F,message=F,eval=T,results="hide"--------------------------------
-check.packages <- function(pkg){
-  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
-  if (length(new.pkg)) 
-    install.packages(new.pkg, dependencies = TRUE)
-  sapply(pkg, require, character.only = TRUE)
-}
-
-pkg <- c("bestglm","car","cenGAM","EnvStats","fitdistrplus","Kendall",
-         "mgcv","multcomp","NADA","nlme","perm","rms","survminer",
-         "vegan","NADA2","bestglm")
-check.packages(pkg)
+## ----warning=F,message=F,eval=F,results="hide"--------------------------------
+#  check.packages <- function(pkg){
+#    new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+#    if (length(new.pkg))
+#      install.packages(new.pkg, dependencies = TRUE)
+#    sapply(pkg, require, character.only = TRUE)
+#  }
+#  
+#  pkg <- c("bestglm","car","cenGAM","EnvStats","fitdistrplus","Kendall",
+#           "mgcv","multcomp","NADA","nlme","perm","rms","survminer",
+#           "vegan","NADA2","bestglm")
+#  check.packages(pkg)
 
 ## ----setup,warning=F,message=F,results="hide"---------------------------------
 # Load Package
@@ -130,7 +130,7 @@ Pyr.mle <- with(ShePyrene,
                 elnormAltCensored(Pyrene, PyreneCen, 
                              ci=TRUE, ci.method ="bootstrap",
                              n.bootstraps = 5000))
-EnvStats::print(Pyr.mle)
+print(Pyr.mle)
 
 ## -----------------------------------------------------------------------------
 Pyr.km.nada <- with(ShePyrene,
@@ -142,7 +142,7 @@ Pyr.km <- with(ShePyrene,
                 enparCensored(Pyrene, PyreneCen, 
                              ci=TRUE, ci.method ="bootstrap",
                              n.bootstraps = 5000))
-EnvStats::print(Pyr.km)
+print(Pyr.km)
 
 ## ---- fig.width=6.5,fig.height=4,fig.align='center',fig.cap="Lognormal probability of pyrene data"----
 Pyr.ROS.nada <- with(ShePyrene,
@@ -161,19 +161,19 @@ Pyr.ROS <- with(ShePyrene,
                              ci=TRUE, ci.method ="bootstrap",
                              n.bootstraps = 5000))
 
-EnvStats::print(Pyr.ROS)
+print(Pyr.ROS)
 
 ## -----------------------------------------------------------------------------
 with(ShePyrene,censtats(Pyrene, PyreneCen))
 
 ## -----------------------------------------------------------------------------
 ## from above
-EnvStats::print(Pyr.km)
+print(Pyr.km)
 
 ## -----------------------------------------------------------------------------
 Pyr.km2 <- with(ShePyrene,enparCensored(Pyrene,PyreneCen, ci=TRUE))
 
-EnvStats::print(Pyr.km2)
+print(Pyr.km2)
 
 ## -----------------------------------------------------------------------------
 pymle <- with(ShePyrene,cenmle(Pyrene, PyreneCen,conf.int=0.95))
@@ -191,11 +191,11 @@ pyr.lnorm <- with(ShePyrene,
                                     ci=TRUE, ci.method ="bootstrap", 
                                     n.bootstraps = 5000))
 
-EnvStats::print(pyr.lnorm)
+print(pyr.lnorm)
 
 ## -----------------------------------------------------------------------------
 # from above
-EnvStats::print(Pyr.ROS)
+print(Pyr.ROS)
 
 ## -----------------------------------------------------------------------------
 with(ShePyrene,cenPredInt(Pyrene, PyreneCen))
@@ -210,7 +210,7 @@ with(ShePyrene,cenTolInt(Pyrene, PyreneCen, cover=0.9))
 example <- with(ShePyrene,
             eqlnormCensored (Pyrene, PyreneCen, p=0.9, 
                              ci=TRUE, ci.type ="upper"))
-EnvStats::print(example)
+print(example)
 
 ## -----------------------------------------------------------------------------
 
@@ -261,14 +261,14 @@ egam <- with(Example1,
              egammaAltCensored(Arsenic, NDisTRUE, 
                                ci=TRUE, ci.type = "upper",
                                ci.method = "normal.approx"))
-EnvStats::print(egam)
+print(egam)
 
 ## -----------------------------------------------------------------------------
 arsenic.out <- with(Example1,
                     enparCensored(Arsenic, NDisTRUE, 
                                   ci=TRUE, ci.method="bootstrap", ci.type="upper",
                                   n.bootstraps=5000))
-EnvStats::print(arsenic.out)
+print(arsenic.out)
 
 ## -----------------------------------------------------------------------------
 data(Example2)
@@ -278,14 +278,14 @@ mibk.ucl95 <- with(Example2,
                    elnormAltCensored (MIBK, MIBKcen, method = "rROS", 
                                       ci=TRUE, ci.method = "bootstrap", 
                                       ci.type = "upper", n.bootstraps = 5000))
-EnvStats::print(mibk.ucl95)
+print(mibk.ucl95)
 
 ## -----------------------------------------------------------------------------
 mibk2.out <- with(Example2, 
                   elnormAltCensored (MIBK2, MIBK2cen, method = "rROS", 
                                      ci=TRUE, ci.method = "bootstrap", 
                                      ci.type = "upper", n.bootstraps = 5000))
-EnvStats::print(mibk2.out)
+print(mibk2.out)
 
 ## -----------------------------------------------------------------------------
 data(Example3)
