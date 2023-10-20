@@ -367,6 +367,16 @@ with(Golden,cenpermanova(Liver,LiverCen,Dosage))
 with(Golden,cenanova(Liver,LiverCen,Dosage,LOG=FALSE))
 
 ## -----------------------------------------------------------------------------
+# Load data
+data(Gales_Creek)
+Gales_Creek <- as.data.frame(Gales_Creek)
+
+# set Year to factor by making a new variable.
+Gales_Creek$Yr.f <- as.factor(Gales_Creek$Yr)
+
+with(Gales_Creek,cen2way(TCr, CrND, Yr.f, Season))
+
+## -----------------------------------------------------------------------------
 data(Recon)
 
 ## -----------------------------------------------------------------------------
@@ -441,6 +451,15 @@ reg.recon.Pctl  <- with(Recon,cencorreg(AtraConc, AtraCen, Pctl))
 
 ## -----------------------------------------------------------------------------
 summary(reg.recon.Dyplant)
+
+## -----------------------------------------------------------------------------
+with(Recon,cencorreg(AtraConc, AtraCen, Dyplant,pred.plot=TRUE))
+
+## -----------------------------------------------------------------------------
+recon.5.alt <- Recon[,c("Dyplant","Applic", "cbrtPctCorn", "Temp", "Pctl")]
+
+plot.reg.recon.5 <- with(Recon,cencorreg(AtraConc, AtraCen, recon.5.alt,pred.plot = TRUE))
+
 
 ## -----------------------------------------------------------------------------
 with(Recon,ATS(AtraConc, AtraCen, Dyplant))
