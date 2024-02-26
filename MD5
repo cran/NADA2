@@ -1,7 +1,7 @@
-6a9a5d84352089b5fb38578e45d9ab58 *DESCRIPTION
+5bcec7e8b6332315779a2f1ffca2cfda *DESCRIPTION
 7c508be3eb5a8297c76230cf0ecb1c56 *LICENSE
 2fbb59964c711459bccf7ad0ee99ed43 *NAMESPACE
-0391a57e605f4a56226144a5d9e17e91 *NEWS.md
+fc4def6436d685f834a8546166e2cc73 *NEWS.md
 157d2b5e906af7d59e8ec15a0f66b344 *R/ATS.R
 a292a98d5fcafb7a30d493f21cc6c917 *R/ATSmini.R
 a41a98296a9a51422ef26a2147f984e3 *R/Brumbaugh.R
@@ -11,7 +11,7 @@ e552bec8a0eef73bcf9ad0e3ecf6022c *R/Example3.R
 eebc2c5e596e7c75ec87291e16a26417 *R/Gales_Creek.R
 d8905b6b03c926dbb97744e498f9c09e *R/Markers.R
 af3c65cf3011f3c7e1cacdeac160b21c *R/PbHeron.R
-0ed142b8c4f02209236878ae7eb5e382 *R/Pollen_Thia.R
+a6e144a1252c648d1e594c1d0b90d512 *R/Pollen_Thia.R
 34af75943f7796bdf6df92fa967bd93f *R/ROSci.R
 aa65086605dfa165832aeae416c48560 *R/ReconLogistic.R
 b929bdec74e27eeeae42a31259d188f6 *R/TCE2.R
@@ -25,7 +25,7 @@ d795242d569a7f0641cd52827a3e2791 *R/binaryClust.R
 ed05162956dd12d83f34f9e7f3cd474d *R/binaryMDS.R
 7e570bd9a20459fe1ff46f99879cc2f0 *R/binarySim.R
 0b1023492d1c3bba55fa748d552fe7e4 *R/cboxplot.R
-e025b43909b54a8beb4b68bdda0ea60d *R/cen1way.R
+dc6bb9ce45f7f15a3535fe370b2c7609 *R/cen1way.R
 bf5f42ede9639b19f59e070ead4c0879 *R/cen2means.R
 3f6ce8e99b0df1753a436039dfcbe78e *R/cen2way.R
 0aa12be5c62756410b5767110c8668b1 *R/cenCompareCdfs.R
@@ -45,7 +45,7 @@ d6991425811e54e9b5b783d16e3b0825 *R/cenregQQ.R
 9c6d8e58835bf565f14b4cc6b8f4bb2c *R/censeaken.R
 6fe39b56bba357ddf83c0059a9600c77 *R/centrend.R
 0c52111c323ce153bc078a3559ff646a *R/centrendsea.R
-ba34622f307008cdc577c2fcf02ae9ca *R/cfit.R
+4aeb250c68ee856b5cfaa2f44d8c54c0 *R/cfit.R
 fd8059f4bd12779b4ee21a527e867070 *R/computeS.R
 e8ec7de6a4816fd9c05b442e61f36f93 *R/equivalent_n.R
 bf54faa4b3073d25621a3399100d778a *R/kenplot.R
@@ -57,7 +57,7 @@ fc067cabc994d273f8c52987213de0dd *R/uscore.R
 525a564fdf5dca8406c4ec1a77d3bcfc *R/uscores.R
 5f2d3e555954a79b7be46abf0f8e2a24 *R/uscoresi.R
 88b9f5bef668fb660d3c1aecd351a0c2 *README.md
-5671ef1ec08a4073c5bec2154f619986 *build/partial.rdb
+eff8452d0f4d5fb3fa829c1f8344e946 *build/partial.rdb
 561c46cf2ba4537d234e764dddd2e8b5 *build/vignette.rds
 2aad90483b791bdb0e4d3a1d8cab182f *data/Brumbaugh.rda
 fa879131da12220eaaca85de6d391db0 *data/Example1.rda
@@ -71,8 +71,8 @@ eec5e6770dd1c9beadd1846836f9cc8f *data/Pollen_Thia.rda
 95f2fa2d1f068b830fee0137fb809a16 *data/TCE2.rda
 6a566d3fa2b7dffa34d4e29f5c5151f3 *data/atrazine.rda
 ee66fc5035924214af745da485eae639 *inst/doc/Censored_Data_Analysis.R
-f91e0cdcd90e1ae5c20c1d2211036af6 *inst/doc/Censored_Data_Analysis.Rmd
-2258cebc029fe25002f71ecbe175f273 *inst/doc/Censored_Data_Analysis.html
+ac652f7a03f81597c6d1cf086a8a9c96 *inst/doc/Censored_Data_Analysis.Rmd
+02bda52109905325793acadad86be04a *inst/doc/Censored_Data_Analysis.html
 d446ba83632d3e5f007ca49c6237b06f *man/ATS.Rd
 798c953d804abda723e5ee6f63964032 *man/ATSmini.Rd
 5762805ef67f470c4725440c8edc04fc *man/Brumbaugh.Rd
@@ -81,7 +81,7 @@ ab0959e6c23de686ad2481d45a405ab5 *man/Example2.Rd
 0c09a6f9133706a23807dde7c8ee8582 *man/Example3.Rd
 fd80b0c2e84043cc5d95a72e87c0bde5 *man/Gales_Creek.Rd
 c6e4a586de110da20834e90fb2a5e11a *man/PbHeron.Rd
-b97ddbb2ea2f147541fc3141cba9b7ca *man/Pollen_Thia.Rd
+3b960986cd5dad0a4405f0df867d82f1 *man/Pollen_Thia.Rd
 9560ac7e602c05b5df4291e9a4774af6 *man/ROSci.Rd
 30aa85ef42d373a47cbb71e33c5f839a *man/ReconLogistic.Rd
 a36082025da4d0824b332a6e2f670fa7 *man/TCE2.Rd
@@ -115,7 +115,7 @@ e26730a251fb95eee9babb8d99d6b991 *man/cenregQQ.Rd
 d66ac1b482e6b624d965611195642d8d *man/censeaken.Rd
 bed450f9a5069b195a5fb562adb837ed *man/centrend.Rd
 9cdecb2d7bda71c92ecfb268bf0f1e9d *man/centrendsea.Rd
-2d9e8f424215b0016f3a0986f4a1e0c4 *man/cfit.Rd
+d7eb96838911e324e4d3af91d9035e33 *man/cfit.Rd
 83d4b3f7e8c0738fd5fe9c1ddf59fa93 *man/computeS.Rd
 80fcbad78404c2e9ac10704f6fc5bac0 *man/equivalent_n.Rd
 c43b2e2adb35682f59180f217f6bbb4b *man/figures/logo.png
@@ -129,4 +129,4 @@ b8f081ff2400a706c18f6c76c2b4e13c *man/ordranks.Rd
 1a38d68b57852a38694818414e2c04b3 *man/uscore.Rd
 554472011243afd4799f709ade51f86b *man/uscores.Rd
 26546a30b8de57c3a30e2ee2e3353b5a *man/uscoresi.Rd
-f91e0cdcd90e1ae5c20c1d2211036af6 *vignettes/Censored_Data_Analysis.Rmd
+ac652f7a03f81597c6d1cf086a8a9c96 *vignettes/Censored_Data_Analysis.Rmd
