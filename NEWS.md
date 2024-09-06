@@ -64,3 +64,14 @@
 * Fixed bug in `cfit.R` regarding reporting of quantiles (2024-02-23)
 
 * adjusted functions that depend on `cfit(...)` like `cen1way(...)` 
+
+# NADA2 1.1.7
+
+* added the argument `drawplot` to `ATS` and `centrend` to make plot drawing optional. 
+
+# NADA2 1.1.8
+
+* revised `cfit` due to changes to `enparCensored` function in the EnvStats package. (2024-07-30)
+* added and `if` statement in the `cfit` function to check if the censored variable is a logical type and convert to logical if needed (2024-08-25) 
+
+
