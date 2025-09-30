@@ -1,4 +1,4 @@
-513e7c99ca7a45537398d0e599c7bb37 *DESCRIPTION
+229c028f5cc9c547c952d5ab6cb15104 *DESCRIPTION
 7c508be3eb5a8297c76230cf0ecb1c56 *LICENSE
 5f1738860f4739fa364cda7508b5c94d *NAMESPACE
 7009766f4a9c854fa6545e41f7b81310 *NEWS.md
@@ -15,7 +15,7 @@ d8905b6b03c926dbb97744e498f9c09e *R/Markers.R
 6808a4dd4668b71ecff30cb196578801 *R/NADA_All.R
 41a6ac5a5a832a2b2d31d06e9017220e *R/NADA_icmle.R
 d94cc672c1b4099dad2216e71cf742c1 *R/NADA_ken.R
-0a2576e789d18db33b71d96a37893807 *R/NADA_ros.R
+56162a666da80a7fdb072d6914d6a31a *R/NADA_ros.R
 5ea80d50eb722510fc7bf896c27fd7d1 *R/NADA_summary.R
 af3c65cf3011f3c7e1cacdeac160b21c *R/PbHeron.R
 aedbc9f658b2c3769a5d1cda8934d554 *R/Pollen_Thia.R
@@ -33,7 +33,7 @@ b01eb29eef9541449a57860166a53d6f *R/atrazine.R
 55c5d9ff0dd976f4f7a19876af221019 *R/binaryDiss.R
 3bd53b99cad43cbaf74e7dc2151ae72e *R/binaryMDS.R
 7e570bd9a20459fe1ff46f99879cc2f0 *R/binarySim.R
-6e757f5187581611ae209e239e2f7501 *R/cboxplot.R
+dfde1e4810f6daeedae6b168b5239ba1 *R/cboxplot.R
 8774586adb59d3fdae69bad727ad6e0a *R/cen1way.R
 bf5f42ede9639b19f59e070ead4c0879 *R/cen2means.R
 3f6ce8e99b0df1753a436039dfcbe78e *R/cen2way.R
@@ -56,7 +56,7 @@ e54b5b47801dfbe60526e83697840cf2 *R/centrend.R
 40f4357bef86315d871f66b92f97a1d4 *R/centrendsea.R
 fe92db5bef5cc40663374d3e14849a20 *R/cfit.R
 fd8059f4bd12779b4ee21a527e867070 *R/computeS.R
-20eeeb70e6dbf3815c02504dca8b3686 *R/equivalent_n.R
+aafed1f6ca78e2ea0df04130b3ce3eea *R/equivalent_n.R
 671e77bf4672c6779a2eaec638ac01e3 *R/kenplot.R
 f9322b6563d14589358b4784e0f717ee *R/ordranks.R
 a37a174502e4a0a855c1e07fb0377889 *R/partplots.R
@@ -66,7 +66,7 @@ fc067cabc994d273f8c52987213de0dd *R/uscore.R
 525a564fdf5dca8406c4ec1a77d3bcfc *R/uscores.R
 5f2d3e555954a79b7be46abf0f8e2a24 *R/uscoresi.R
 88b9f5bef668fb660d3c1aecd351a0c2 *README.md
-3d3b4ff1ae4145a71f2efcbda5018af5 *build/partial.rdb
+e571acddd7df351ef80e2f46c9498721 *build/partial.rdb
 2aad90483b791bdb0e4d3a1d8cab182f *data/Brumbaugh.rda
 c673bffb61f1ca499659ef164a2be8a0 *data/Cadmium.rda
 1e12b8bdf9df31652e44d374229c4b05 *data/CuZn.rda
@@ -113,7 +113,7 @@ c114c8ab9a004b03ea0b48b7cfa07a31 *man/Usc.Rd
 4f5de0d742caba5d2c11ee54b1e589fb *man/binaryDiss.Rd
 062678a170c371b8354dc3a0e5bf0879 *man/binaryMDS.Rd
 6027e7f301577ab6b2c746c06f0fed1f *man/binarySim.Rd
-9cd2f5dcf76695824c57d9fa465b0826 *man/cboxplot.Rd
+a55a9e63a40567b1d8e7e4e0c528b9a1 *man/cboxplot.Rd
 edfd67b1fccadabbe7a1151ae222e479 *man/cen1way.Rd
 a62fb1790334f9991e76a4d752e39f4f *man/cen2means.Rd
 e691eca17404983355c6372369e04c37 *man/cen2way.Rd

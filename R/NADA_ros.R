@@ -272,22 +272,23 @@ as.data.frame.ros <- function(x, ...) {
 #' @keywords internal
 
 hc_ppoints <- function(obs, censored, na.action = getOption("na.action")) {
+  # from hc.ppoints
   if (!is.logical(censored)) stop("censored indicator must be logical vector!\n")
 
   if (anyNA(obs)||anyNA(censored)) {
-    if (is.null(na.action)) na.action = "na.omit"
-    obs  <-  do.call(na.action, list(obs))
+    if (is.null(na.action)) na.action <- "na.omit"
+    obs  <- do.call(na.action, list(obs))
     censored  <- do.call(na.action, list(censored))
   }
 
-  pp <-  numeric(length(obs))
+  pp  <- numeric(length(obs))
 
-  if (!any(censored)) pp <-  ppoints(obs)
+  if (!any(censored)) pp <- ppoints(obs)
   else
   {
-    cn  <-  cohn(obs, censored)
-    pp[!censored] <-  hc_ppoints_uncen(obs, censored, cn, na.action)
-    pp[censored]  <-  hc_ppoints_cen(obs, censored, cn, na.action)
+    cn  <- cohn(obs, censored)
+    pp[!censored]  <- hc_ppoints_uncen(obs, censored, cn, na.action)
+    pp[censored]   <- hc_ppoints_cen(obs, censored, cn, na.action)
   }
 
   return(pp)
@@ -308,31 +309,38 @@ hc_ppoints <- function(obs, censored, na.action = getOption("na.action")) {
 #'
 #' @keywords internal
 hc_ppoints_uncen <- function(obs, censored, cn = NULL, na.action = getOption("na.action")) {
-  stopifnot(is.logical(censored))
-
-  if (anyNA(obs) || anyNA(censored)) {
-    if (is.null(na.action)) na.action <- "na.omit"
-    obs <- do.call(na.action, list(obs))
+  ## From NADA hc.ppoints.uncen
+  if (!is.logical(censored)) stop("censored indicator must be logical vector!\n")
+  if (anyNA(obs)||anyNA(censored)) {
+    if (is.null(na.action)) na.action  <- "na.omit"
+    obs  <-  do.call(na.action, list(obs))
     censored <- do.call(na.action, list(censored))
   }
 
-  if (is.null(cn)) cn <- cohn(obs, censored)
+  if (missing(cn)) { cn <- cohn(obs, censored) }
+  #cn = cohn(obs, censored)
 
-  nonzero <- cn$A != 0
+  nonzero <- (cn$A != 0)
   A <- cn$A[nonzero]
   B <- cn$B[nonzero]
   P <- cn$P[nonzero]
   limit <- cn$limit[nonzero]
 
-  pp <- numeric()
-  for (i in seq_along(limit)) {
-    R <- seq_len(A[i])
-    k <- ifelse(is.na(P[i + 1]), 0, P[i + 1])
-    pp <- c(pp, (1 - P[i]) + ((P[i] - k) * R / (A[i] + 1)))
-  }
+  pp  <- numeric()
+  n <- length(limit)
+  for (i in 1:n){
+    R <- 1:A[i]
 
+    k <- P[i+1]
+    if (is.na(k)) k <- 0
+
+    for (r in seq_along(R)){
+      pp  <- c(pp, (1 - P[i]) + ((P[i] - k) * R[r])/(A[i] + 1))
+    }
+  }
   return(pp)
 }
+
 
 #' @title Plotting Positions for Censored Observations (Cohn Method)
 #' @description
@@ -348,36 +356,40 @@ hc_ppoints_uncen <- function(obs, censored, cn = NULL, na.action = getOption("na
 #'
 #' @keywords internal
 hc_ppoints_cen <- function(obs, censored, cn = NULL, na.action = getOption("na.action")) {
-  stopifnot(is.logical(censored))
+  ## From NADA hc.ppoints.cen
 
-  if (anyNA(obs) || anyNA(censored)) {
-    if (is.null(na.action)) na.action <- "na.omit"
+  if (!is.logical(censored)) stop("censored indicator must be logical vector!\n")
+  if (anyNA(obs)||anyNA(censored)) {
+    if (is.null(na.action)) na.action  <- "na.omit"
     obs <- do.call(na.action, list(obs))
-    censored <- do.call(na.action, list(censored))
+    censored  <-  do.call(na.action, list(censored))
   }
 
-  if (is.null(cn)) cn <- cohn(obs, censored)
+  if (missing(cn)) { cn <- cohn(obs, censored) }
 
   C <- cn$C
   P <- cn$P
   limit <- cn$limit
 
-  # Remove rows with P == 1
-  if (P[1] == 1) {
+  if (P[1] == 1)
+  {
     C <- C[-1]
     P <- P[-1]
     limit <- limit[-1]
   }
 
-  pp <- numeric()
-  for (i in seq_along(limit)) {
-    c_i <- C[i]
-    r <- seq_len(c_i)
-    pp <- c(pp, (1 - P[i]) * r / (c_i + 1))
+  pp  <- numeric()
+  for (i in 1:length(limit))
+  {
+    c.i <- C[i]
+    for (r in 1:c.i)
+    {
+      pp <- c(pp, (1 - P[i]) * r/(c.i + 1))
+    }
   }
-
   return(pp)
 }
+
 
 
 #' Calculate Cohn Numbers
@@ -396,6 +408,7 @@ hc_ppoints_cen <- function(obs, censored, cn = NULL, na.action = getOption("na.a
 #' NADA2:::cohn(obs, cens)
 #'
 cohn <- function(obs, censored, na.action = getOption("na.action")) {
+  # improved speed from vectorization
   if (!is.logical(censored)) stop("censored must be a logical vector.")
 
   # Apply na.action
@@ -406,26 +419,33 @@ cohn <- function(obs, censored, na.action = getOption("na.action")) {
   }
 
   uncen <- obs[!censored]
-  cen <- obs[censored]
+  cen   <- obs[censored]
 
-  A <- B <- C <- P <- numeric()
   limit <- sort(unique(cen))
+  if (any(uncen < limit[1])) limit <- c(0, limit)
 
-  a <- sum(uncen < limit[1])
-  if (a > 0) limit <- c(0, limit)
+  n <- length(limit)
 
-  i <- length(limit)
+  # Compute A, B, C vectorized
+  A <- vapply(1:n, function(j) {
+    if (j == n) sum(uncen >= limit[j])
+    else sum(uncen >= limit[j] & uncen < limit[j + 1])
+  }, numeric(1))
 
-  A[i] <- sum(uncen >= limit[i])
-  B[i] <- sum(obs <= limit[i]) - sum(uncen == limit[i])
-  C[i] <- sum(cen == limit[i])
-  P[i] <- A[i] / (A[i] + B[i])
+  B <- vapply(1:n, function(j) sum(obs <= limit[j]) - sum(uncen == limit[j]), numeric(1))
+  C <- vapply(1:n, function(j) sum(cen == limit[j]), numeric(1))
 
-  for (j in (i - 1):1) {
-    A[j] <- sum(uncen >= limit[j] & uncen < limit[j + 1])
-    B[j] <- sum(obs <= limit[j]) - sum(uncen == limit[j])
-    C[j] <- sum(cen == limit[j])
-    P[j] <- P[j + 1] + ((A[j] / (A[j] + B[j])) * (1 - P[j + 1]))
+  # === Numerically stable P ===
+  frac <- A / (A + B)
+  P <- numeric(n)
+  P[n] <- frac[n]
+  if (n > 1) {
+    P[(n-1):1] <- Reduce(
+      function(nextP, j) frac[j] * (1 - nextP) + nextP,
+      (n-1):1,
+      init = P[n],
+      accumulate = TRUE
+    )[-1]
   }
 
   structure(list(A = A, B = B, C = C, P = P, limit = limit),

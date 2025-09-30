@@ -1,8 +1,8 @@
 Package: NADA2
 Type: Package
 Title: Data Analysis for Censored Environmental Data
-Version: 2.0.0
-Date: 2025-09-23
+Version: 2.0.1
+Date: 2025-09-30
 Authors@R: c(person("Paul", "Julian",role=c("aut","cre"),
             email="pauljulianphd@gmail.com"),
             person("Dennis", "Helsel",role=c("aut","cph"),
@@ -28,9 +28,9 @@ LazyLoad: yes
 LazyData: yes
 RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2025-09-23 14:20:43 UTC; PaulJulian
+Packaged: 2025-09-30 17:37:01 UTC; PaulJulian
 Author: Paul Julian [aut, cre],
   Dennis Helsel [aut, cph],
   Lopaka Lee [aut, cph]
 Repository: CRAN
-Date/Publication: 2025-09-23 22:40:17 UTC
+Date/Publication: 2025-09-30 18:00:02 UTC
